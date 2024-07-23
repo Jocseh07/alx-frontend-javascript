@@ -7,7 +7,7 @@ export default async function asyncUploadUser() {
     photo = await uploadPhoto();
     user = await createUser();
   } catch (err) {
-    console.log('Signup system offline');
+    throw new Error(err);
   }
   return { photo: photo || null, user: user || null };
 }
