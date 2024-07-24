@@ -6,9 +6,10 @@ export default async function handleProfileSignup(
   lastName,
   fileName,
 ) {
-  const promises = [signUpUser(firstName, lastName), uploadPhoto(fileName)];
-
-  return Promise.allSettled(promises).then((results) => {
+  return Promise.allSettled([
+    signUpUser(firstName, lastName),
+    uploadPhoto(fileName),
+  ]).then((results) => {
     results.map((result) => ({
       status: result.status,
       value:
