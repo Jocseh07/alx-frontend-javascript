@@ -1,4 +1,6 @@
-export default class Currency {
+import Currency from './3-currency';
+
+export default class Pricing {
   constructor(amount, currency) {
     if (typeof amount !== 'number') {
       throw TypeError('Amount must be a number');
@@ -32,7 +34,7 @@ export default class Currency {
     this._currency = currency;
   }
 
-  displayFullCurrency() {
+  displayFullPrice() {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
