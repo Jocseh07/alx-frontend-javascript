@@ -1,6 +1,5 @@
-export default function cleanSet(set, startString) {
+function cleanSet(set, startString) {
   let result = '';
-  if (startString === '') return result;
   for (const value of set) {
     if (value.startsWith(startString)) {
       result += `${value.slice(startString.length)}-`;
@@ -8,3 +7,5 @@ export default function cleanSet(set, startString) {
   }
   return result.slice(0, -1);
 }
+
+export default cleanSet;
