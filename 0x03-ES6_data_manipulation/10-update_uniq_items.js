@@ -3,11 +3,11 @@ export default function updateUniqueItems(groceries) {
     throw new Error('Cannot process');
   }
 
-  for (const [item, quantity] of groceries) {
-    if (quantity === 1) {
-      groceries.set(item, 100);
+  groceries.forEach((value, key) => {
+    if (value === 1) {
+      groceries.set(key, 100);
     }
-  }
+  });
 
   return groceries;
 }
