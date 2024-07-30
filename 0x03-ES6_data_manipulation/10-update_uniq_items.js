@@ -1,8 +1,8 @@
-const updateUniqueItems = (groceries) => {
-  if (!(groceries instanceof Map)) throw new Error('Cannot process');
+const updateUniqueItems = (map) => {
+  if (!(map instanceof Map)) throw new Error('Cannot process');
 
-  groceries.forEach((value, key) => {
-    if (value === 1) groceries.set(key, 100);
+  map.forEach((value, key) => {
+    if (value === 1) map.set(key, 100);
   });
 };
 
